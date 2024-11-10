@@ -1,0 +1,23 @@
+<%- include('./layout/header') %>
+<div>
+    <a href="/">Back Home</a>
+</div>
+<div class="container-sm">
+  <div class="text-center">
+      <h3>Chỉnh sửa thông tin</h3>
+  </div>
+  <form action="/edit/<%= user._id %>" method="POST">
+      <div class="mb-3">
+          <label for="name" class="form-label">Tên Khoa</label>
+          <input name="name" type="text" class="form-control" placeholder="Nhập tên ở đây" value="<%= user.name %>" required>
+      </div>
+      <div class="mb-3">
+          <label for="numberof" class="form-label">Số lượng CBGV</label>
+          <input name="numberof" type="number" class="form-control" placeholder="Nhập số lượng CBGV" value="<%= user.numberof %>" required>
+      </div>
+      <button type="submit" class="container-fluid border border-0" style="background-color: blue; color: white;">Cập nhật</button>
+  </form>
+</div>
+
+
+<%- include('./layout/footer') %>
