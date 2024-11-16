@@ -1,0 +1,72 @@
+<%- include('./layout/header') %>
+<div>
+  <a href="/">Back Home</a>
+</div>
+
+<div class="container-sm">
+  <div class="text-center">
+      <h3>Create a Booking</h3>
+      <p>Fill in all the required fields below to create a booking</p>
+  </div>
+
+  <form action="/add" method="POST">
+      <!-- Nhập tên khách hàng -->
+      <div class="mb-3">
+          <label for="customerName" class="form-label">Customer Name</label>
+          <input 
+              name="customerName" 
+              type="text" 
+              id="customerName" 
+              class="form-control" 
+              placeholder="Enter customer name" 
+              required>
+      </div>
+
+      <!-- Nhập ngày đặt -->
+      <div class="mb-3">
+          <label for="date" class="form-label">Booking Date</label>
+          <input 
+              name="date" 
+              type="date" 
+              id="date" 
+              class="form-control" 
+              required>
+      </div>
+
+      <!-- Nhập giờ đặt -->
+      <div class="mb-3">
+          <label for="time" class="form-label">Booking Time</label>
+          <input 
+              name="time" 
+              type="time" 
+              id="time" 
+              class="form-control" 
+              required>
+      </div>
+
+      <!-- Trạng thái đặt chỗ -->
+      <div class="mb-3">
+          <label for="status" class="form-label">Status</label>
+          <select 
+              name="status" 
+              id="status" 
+              class="form-select" 
+              required>
+              <option value="Pending" selected>Pending</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Cancelled">Cancelled</option>
+          </select>
+      </div>
+
+      <!-- Nút gửi -->
+      <button 
+          type="submit" 
+          class="container-fluid border border-0" 
+          style="background-color: blue; color: white;">
+          Create Booking
+      </button>
+  </form>
+</div>
+
+
+<%- include('./layout/footer') %>

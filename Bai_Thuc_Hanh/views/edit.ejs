@@ -1,0 +1,48 @@
+<%- include('./layout/header') %>
+<div>
+    <a href="/">Back Home</a>
+</div>
+<div class="container-sm">
+  <div class="text-center">
+      <h3>Chỉnh sửa thông tin</h3>
+  </div>
+  <form action="/edit/<%= user._id %>" method="POST">
+    <div class="mb-3">
+        <label for="customerName" class="form-label">Customer Name</label>
+        <input 
+            name="customerName" 
+            type="text" 
+            id="customerName" 
+            class="form-control" 
+            placeholder="Enter customer name" 
+            required>
+    </div>
+
+    <!-- Nhập ngày đặt -->
+    <div class="mb-3">
+        <label for="date" class="form-label">Booking Date</label>
+        <input 
+            name="date" 
+            type="date" 
+            id="date" 
+            class="form-control" 
+            required 
+            min="<%= new Date().toISOString().split('T')[0] %>">
+    </div>
+
+    <!-- Nhập giờ đặt -->
+    <div class="mb-3">
+        <label for="time" class="form-label">Booking Time</label>
+        <input 
+            name="time" 
+            type="time" 
+            id="time" 
+            class="form-control" 
+            required>
+    </div>
+      <button type="submit" class="container-fluid border border-0" style="background-color: blue; color: white;">Cập nhật</button>
+  </form>
+</div>
+
+
+<%- include('./layout/footer') %>
